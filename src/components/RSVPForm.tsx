@@ -90,24 +90,28 @@ const RSVPForm = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-gradient-soft">
-      <div className="max-w-2xl mx-auto text-center">
-        <div className="animate-fade-in">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
-            RSVP
-          </h2>
-          <div className="w-16 h-px bg-gradient-romantic mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground mb-8">
-            Please let us know if you'll be joining us for our special day
-          </p>
-          
-          <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild>
-              <Button className="bg-gradient-romantic hover:shadow-glow transition-all duration-300 text-white font-semibold py-3 px-8 text-lg rounded-full group">
-                <Heart className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                Respond Now
-              </Button>
-            </DialogTrigger>
+    <>
+      <section className="py-20 px-6 bg-gradient-soft">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="animate-fade-in">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
+              RSVP
+            </h2>
+            <div className="w-16 h-px bg-gradient-romantic mx-auto mb-6"></div>
+            <p className="text-lg text-muted-foreground mb-8">
+              Please let us know if you'll be joining us for our special day
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Fixed RSVP Button */}
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>
+          <Button className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-romantic hover:shadow-glow transition-all duration-300 text-white shadow-lg hover:scale-110 group">
+            <Heart className="w-6 h-6 group-hover:animate-pulse" />
+          </Button>
+        </DialogTrigger>
             <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card/95 backdrop-blur-sm">
               <DialogHeader>
                 <DialogTitle className="font-serif text-2xl text-center">
@@ -240,9 +244,7 @@ const RSVPForm = () => {
               </form>
             </DialogContent>
           </Dialog>
-        </div>
-      </div>
-    </section>
+    </>
   );
 };
 
