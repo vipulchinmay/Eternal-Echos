@@ -112,138 +112,138 @@ const RSVPForm = () => {
             <Heart className="w-6 h-6 group-hover:animate-pulse" />
           </Button>
         </DialogTrigger>
-            <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card/95 backdrop-blur-sm">
-              <DialogHeader>
-                <DialogTitle className="font-serif text-2xl text-center">
-                  Your Response
-                </DialogTitle>
-              </DialogHeader>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Personal Information */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => handleInputChange('name', e.target.value)}
-                      placeholder="Enter your full name"
-                      className="border-border/50 focus:border-primary"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange('email', e.target.value)}
-                      placeholder="Enter your email"
-                      className="border-border/50 focus:border-primary"
-                    />
-                  </div>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card/95 backdrop-blur-sm">
+          <DialogHeader>
+            <DialogTitle className="font-serif text-2xl text-center">
+              Your Response
+            </DialogTitle>
+          </DialogHeader>
+          
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Personal Information */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="name">Full Name *</Label>
+                <Input
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => handleInputChange('name', e.target.value)}
+                  placeholder="Enter your full name"
+                  className="border-border/50 focus:border-primary"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email Address *</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  placeholder="Enter your email"
+                  className="border-border/50 focus:border-primary"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone Number</Label>
+              <Input
+                id="phone"
+                value={formData.phone}
+                onChange={(e) => handleInputChange('phone', e.target.value)}
+                placeholder="Enter your phone number"
+                className="border-border/50 focus:border-primary"
+              />
+            </div>
+
+            {/* Attendance */}
+            <div className="space-y-4">
+              <Label>Will you be attending? *</Label>
+              <RadioGroup 
+                value={formData.attending} 
+                onValueChange={(value) => handleInputChange('attending', value)}
+                className="flex gap-6"
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="yes" id="yes" />
+                  <Label htmlFor="yes" className="cursor-pointer">
+                    Yes, I'll be there! 🎉
+                  </Label>
                 </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input
-                    id="phone"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    placeholder="Enter your phone number"
-                    className="border-border/50 focus:border-primary"
-                  />
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="no" id="no" />
+                  <Label htmlFor="no" className="cursor-pointer">
+                    Sorry, can't make it 😔
+                  </Label>
                 </div>
+              </RadioGroup>
+            </div>
 
-                {/* Attendance */}
-                <div className="space-y-4">
-                  <Label>Will you be attending? *</Label>
-                  <RadioGroup 
-                    value={formData.attending} 
-                    onValueChange={(value) => handleInputChange('attending', value)}
-                    className="flex gap-6"
-                  >
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="yes" id="yes" />
-                      <Label htmlFor="yes" className="cursor-pointer">
-                        Yes, I'll be there! 🎉
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="no" id="no" />
-                      <Label htmlFor="no" className="cursor-pointer">
-                        Sorry, can't make it 😔
-                      </Label>
-                    </div>
-                  </RadioGroup>
+            {/* Guest Count (only show if attending) */}
+            {formData.attending === 'yes' && (
+              <div className="space-y-2 animate-fade-in">
+                <Label htmlFor="guestCount">Number of Guests</Label>
+                <Input
+                  id="guestCount"
+                  type="number"
+                  min="1"
+                  max="5"
+                  value={formData.guestCount}
+                  onChange={(e) => handleInputChange('guestCount', parseInt(e.target.value) || 1)}
+                  className="border-border/50 focus:border-primary"
+                />
+                <p className="text-sm text-muted-foreground">
+                  Including yourself (maximum 5 guests)
+                </p>
+              </div>
+            )}
+
+            {/* Dietary Restrictions (only show if attending) */}
+            {formData.attending === 'yes' && (
+              <div className="space-y-2 animate-fade-in">
+                <Label htmlFor="dietary">Dietary Restrictions or Allergies</Label>
+                <Textarea
+                  id="dietary"
+                  value={formData.dietaryRestrictions}
+                  onChange={(e) => handleInputChange('dietaryRestrictions', e.target.value)}
+                  placeholder="Please let us know about any dietary restrictions..."
+                  className="border-border/50 focus:border-primary resize-none"
+                  rows={3}
+                />
+              </div>
+            )}
+
+            {/* Message */}
+            <div className="space-y-2">
+              <Label htmlFor="message">Special Message (Optional)</Label>
+              <Textarea
+                id="message"
+                value={formData.message}
+                onChange={(e) => handleInputChange('message', e.target.value)}
+                placeholder="Share your excitement or well wishes..."
+                className="border-border/50 focus:border-primary resize-none"
+                rows={4}
+              />
+            </div>
+
+            {/* Submit Button */}
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-gradient-romantic hover:shadow-glow transition-all duration-300 text-white font-semibold py-3 text-lg"
+            >
+              {isSubmitting ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  Sending RSVP...
                 </div>
-
-                {/* Guest Count (only show if attending) */}
-                {formData.attending === 'yes' && (
-                  <div className="space-y-2 animate-fade-in">
-                    <Label htmlFor="guestCount">Number of Guests</Label>
-                    <Input
-                      id="guestCount"
-                      type="number"
-                      min="1"
-                      max="5"
-                      value={formData.guestCount}
-                      onChange={(e) => handleInputChange('guestCount', parseInt(e.target.value) || 1)}
-                      className="border-border/50 focus:border-primary"
-                    />
-                    <p className="text-sm text-muted-foreground">
-                      Including yourself (maximum 5 guests)
-                    </p>
-                  </div>
-                )}
-
-                {/* Dietary Restrictions (only show if attending) */}
-                {formData.attending === 'yes' && (
-                  <div className="space-y-2 animate-fade-in">
-                    <Label htmlFor="dietary">Dietary Restrictions or Allergies</Label>
-                    <Textarea
-                      id="dietary"
-                      value={formData.dietaryRestrictions}
-                      onChange={(e) => handleInputChange('dietaryRestrictions', e.target.value)}
-                      placeholder="Please let us know about any dietary restrictions..."
-                      className="border-border/50 focus:border-primary resize-none"
-                      rows={3}
-                    />
-                  </div>
-                )}
-
-                {/* Message */}
-                <div className="space-y-2">
-                  <Label htmlFor="message">Special Message (Optional)</Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => handleInputChange('message', e.target.value)}
-                    placeholder="Share your excitement or well wishes..."
-                    className="border-border/50 focus:border-primary resize-none"
-                    rows={4}
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-romantic hover:shadow-glow transition-all duration-300 text-white font-semibold py-3 text-lg"
-                >
-                  {isSubmitting ? (
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      Sending RSVP...
-                    </div>
-                  ) : (
-                    'Send RSVP'
-                  )}
-                </Button>
-              </form>
-            </DialogContent>
-          </Dialog>
+              ) : (
+                'Send RSVP'
+              )}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
