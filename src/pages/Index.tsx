@@ -1,5 +1,6 @@
 import WeddingHero from '@/components/WeddingHero';
 import ParticleBackground from '@/components/ParticleBackground';
+import CountdownTimer from '@/components/CountdownTimer';
 import EventDetails from '@/components/EventDetails';
 import PhotoGallery from '@/components/PhotoGallery';
 import RSVPForm from '@/components/RSVPForm';
@@ -12,6 +13,9 @@ const Index = () => {
       
       {/* Hero Section */}
       <WeddingHero />
+      
+      {/* Countdown Section */}
+      <CountdownTimer />
       
       {/* Event Details Section */}
       <EventDetails />
