@@ -3,7 +3,6 @@ import ParticleBackground from '@/components/ParticleBackground';
 import CountdownTimer from '@/components/CountdownTimer';
 import EventDetails from '@/components/EventDetails';
 import PhotoGallery from '@/components/PhotoGallery';
-import RSVPForm from '@/components/RSVPForm';
 import VenueLocation from '@/components/VenueLocation';
 
 const Index = () => {
@@ -22,9 +21,6 @@ const Index = () => {
       
       {/* Photo Gallery Section */}
       <PhotoGallery />
-      
-      {/* RSVP Form Section */}
-      <RSVPForm />
       
       {/* Venue Location Section */}
       <VenueLocation />
