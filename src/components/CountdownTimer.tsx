@@ -8,7 +8,7 @@ interface TimeLeft {
 }
 
 const CountdownTimer = () => {
-  const weddingDate = new Date('2024-11-23T16:00:00'); // November 23rd, 2024
+  const weddingDate = new Date('2025-11-23T16:00:00'); // November 23rd, 2025
   
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
