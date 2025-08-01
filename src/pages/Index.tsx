@@ -3,6 +3,7 @@ import ParticleBackground from '@/components/ParticleBackground';
 import CountdownTimer from '@/components/CountdownTimer';
 import EventDetails from '@/components/EventDetails';
 import PhotoGallery from '@/components/PhotoGallery';
+import RSVPForm from '@/components/RSVPForm';
 import VenueLocation from '@/components/VenueLocation';
 
 const Index = () => {
@@ -24,6 +25,9 @@ const Index = () => {
       
       {/* Venue Location Section */}
       <VenueLocation />
+      
+      {/* RSVP Floating Button */}
+      <RSVPForm />
       
       {/* Footer */}
       <footer className="bg-gradient-romantic text-white py-12 px-6">
