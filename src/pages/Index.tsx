@@ -3,6 +3,7 @@ import ParticleBackground from '@/components/ParticleBackground';
 import CountdownTimer from '@/components/CountdownTimer';
 import EventDetails from '@/components/EventDetails';
 import PhotoGallery from '@/components/PhotoGallery';
+import PhotoManager from '@/components/PhotoManager';
 import RSVPForm from '@/components/RSVPForm';
 import VenueLocation from '@/components/VenueLocation';
 
@@ -22,6 +23,9 @@ const Index = () => {
       
       {/* Photo Gallery Section */}
       <PhotoGallery />
+      
+      {/* Photo Manager Section */}
+      <PhotoManager />
       
       {/* Venue Location Section */}
       <VenueLocation />
