@@ -2,68 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Wedding Invitation Design System - Elegant Romance Theme */
+/* Wedding Invitation Design System - Luxurious Romance Theme */
 
 @layer base {
   :root {
-    /* Base colors - Cream and soft tones */
-    --background: 30 50% 98%;
-    --foreground: 25 20% 15%;
+    /* Base colors - Sophisticated neutrals */
+    --background: 25 15% 97%;
+    --foreground: 20 15% 8%;
 
-    --card: 30 40% 97%;
-    --card-foreground: 25 20% 15%;
+    --card: 25 20% 96%;
+    --card-foreground: 20 15% 8%;
 
-    --popover: 30 40% 97%;
-    --popover-foreground: 25 20% 15%;
+    --popover: 25 20% 96%;
+    --popover-foreground: 20 15% 8%;
 
-    /* Primary - Rose Gold */
-    --primary: 15 60% 70%;
-    --primary-foreground: 30 50% 98%;
-    --primary-glow: 15 70% 80%;
+    /* Primary - Deep Rose Gold */
+    --primary: 12 65% 62%;
+    --primary-foreground: 25 15% 97%;
+    --primary-glow: 15 75% 72%;
+    --primary-light: 18 60% 85%;
 
-    /* Secondary - Champagne */
-    --secondary: 40 30% 90%;
-    --secondary-foreground: 25 20% 15%;
+    /* Secondary - Warm Champagne */
+    --secondary: 35 40% 88%;
+    --secondary-foreground: 20 15% 8%;
 
     /* Muted tones */
-    --muted: 35 25% 92%;
-    --muted-foreground: 25 15% 45%;
+    --muted: 30 20% 90%;
+    --muted-foreground: 25 12% 35%;
 
-    /* Accent - Burgundy */
-    --accent: 350 60% 45%;
-    --accent-foreground: 30 50% 98%;
+    /* Accent - Deep Burgundy */
+    --accent: 345 70% 42%;
+    --accent-foreground: 25 15% 97%;
+    --accent-light: 345 50% 75%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 30 50% 98%;
+    --destructive-foreground: 25 15% 97%;
 
-    --border: 35 20% 88%;
-    --input: 35 20% 88%;
-    --ring: 15 60% 70%;
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 12 65% 62%;
 
-    --radius: 1rem;
+    --radius: 1.2rem;
 
-    /* Wedding-specific colors */
-    --wedding-gold: 45 80% 75%;
-    --wedding-blush: 15 50% 92%;
-    --wedding-sage: 120 25% 70%;
+    /* Enhanced wedding colors */
+    --wedding-gold: 42 85% 68%;
+    --wedding-gold-light: 45 70% 82%;
+    --wedding-blush: 15 45% 88%;
+    --wedding-sage: 115 35% 65%;
+    --wedding-sage-light: 120 25% 80%;
+    --wedding-cream: 35 30% 92%;
+    --wedding-pearl: 40 15% 88%;
     
-    /* Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
-    --gradient-soft: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--wedding-blush)) 100%);
-    --gradient-accent: linear-gradient(45deg, hsl(var(--accent)) 0%, hsl(350 70% 55%) 100%);
+    /* Advanced gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 50%, hsl(var(--accent-light)) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--wedding-blush)) 60%, hsl(var(--wedding-cream)) 100%);
+    --gradient-accent: linear-gradient(45deg, hsl(var(--accent)) 0%, hsl(345 80% 52%) 50%, hsl(var(--primary)) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--wedding-gold)) 0%, hsl(var(--wedding-gold-light)) 100%);
+    --gradient-pearl: linear-gradient(45deg, hsl(var(--wedding-pearl)) 0%, hsl(var(--wedding-cream)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.9) 0%, hsl(var(--accent) / 0.8) 50%, hsl(var(--primary-glow) / 0.7) 100%);
 
-    /* Shadows */
-    --shadow-romantic: 0 10px 40px -10px hsl(var(--primary) / 0.3);
-    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.15);
-    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.4);
+    /* Enhanced shadows */
+    --shadow-romantic: 0 20px 60px -15px hsl(var(--primary) / 0.4);
+    --shadow-soft: 0 8px 30px -8px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.5);
+    --shadow-elegant: 0 10px 50px -10px hsl(var(--accent) / 0.3);
+    --shadow-floating: 0 15px 35px -5px hsl(var(--primary) / 0.25);
 
-    /* Glass effect */
-    --glass-bg: hsl(var(--background) / 0.7);
-    --glass-border: hsl(var(--border) / 0.3);
+    /* Glass effects */
+    --glass-bg: hsl(var(--background) / 0.8);
+    --glass-border: hsl(var(--border) / 0.4);
+    --glass-romantic: hsl(var(--primary) / 0.1);
 
-    /* Animations */
-    --transition-romantic: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-smooth: all 0.3s ease-out;
+    /* Advanced animations */
+    --transition-romantic: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -128,5 +142,106 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "kern", "liga", "clig", "calt";
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Interactive card effects */
+  .card-interactive {
+    @apply transition-all duration-500 hover:shadow-floating hover:-translate-y-2 hover:scale-[1.02];
+  }
+
+  .card-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .card-glow::before {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    content: '';
+    background: linear-gradient(45deg, transparent 30%, hsl(var(--primary) / 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    animation: shimmer 3s infinite;
+  }
+
+  .card-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Button enhancements */
+  .btn-romantic {
+    @apply relative overflow-hidden bg-gradient-romantic text-primary-foreground px-8 py-4 rounded-xl font-semibold tracking-wide;
+    @apply hover:shadow-romantic hover:scale-105 transition-all duration-300;
+    @apply before:absolute before:inset-0 before:bg-shimmer before:opacity-0 hover:before:opacity-100;
+    @apply before:transition-opacity before:duration-300;
+  }
+
+  .btn-romantic::before {
+    content: '';
+    background: linear-gradient(90deg, transparent, hsl(var(--primary-foreground) / 0.2), transparent);
+    transform: translateX(-100%);
+    animation: shimmer 2s infinite;
+  }
+
+  /* Text effects */
+  .text-gradient {
+    @apply bg-gradient-romantic bg-clip-text text-transparent;
+  }
+
+  .text-shimmer {
+    @apply bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+
+  /* Glass morphism */
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl;
+  }
+
+  /* Floating elements */
+  .floating {
+    @apply animate-float;
+  }
+
+  /* Parallax sections */
+  .parallax-section {
+    @apply relative overflow-hidden;
+  }
+
+  /* Hover reveal effects */
+  .hover-reveal {
+    @apply relative overflow-hidden group;
+  }
+
+  .hover-reveal::after {
+    @apply absolute inset-0 bg-gradient-romantic opacity-0 group-hover:opacity-20 transition-opacity duration-500;
+    content: '';
+  }
+
+  /* Magnetic hover effect */
+  .magnetic {
+    @apply transition-transform duration-300;
+  }
+
+  .magnetic:hover {
+    transform: translateY(-8px) scale(1.05);
+  }
+
+  /* Stagger animation helper */
+  .stagger-item {
+    @apply opacity-0 translate-y-8;
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-item:nth-child(6) { animation-delay: 0.6s; }
 }

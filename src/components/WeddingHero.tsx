@@ -40,33 +40,33 @@ const WeddingHero = ({
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
       
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-6 animate-fade-in">
-        <div className="mb-8">
-          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-4 animate-scale-in">
+      <div className="relative z-10 text-center text-white px-6">
+        <div className="mb-8 stagger-item">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold mb-6 animate-bounce-in text-shimmer">
             {brideName} & {groomName}
           </h1>
-          <div className="w-24 h-px bg-gradient-romantic mx-auto mb-6"></div>
-          <p className="text-xl md:text-2xl font-light tracking-wide">
+          <div className="w-32 h-0.5 bg-gradient-romantic mx-auto mb-8 animate-glow-pulse"></div>
+          <p className="text-lg sm:text-xl md:text-2xl font-light tracking-wide mb-2 animate-slide-up">
             Together with their families
           </p>
-          <p className="text-lg md:text-xl mt-2 opacity-90">
+          <p className="text-base sm:text-lg md:text-xl opacity-90 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             request the pleasure of your company
           </p>
         </div>
         
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 mx-auto max-w-md shadow-glow">
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-2">
+        <div className="glass-card card-interactive p-6 sm:p-8 mx-auto max-w-md shadow-floating animate-scale-in mb-12" style={{ animationDelay: '0.4s' }}>
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 animate-romantic-pulse">
             Wedding Celebration
           </h2>
-          <p className="text-xl font-medium text-primary-glow">
+          <p className="text-lg sm:text-xl font-medium text-primary-glow mb-4">
             {weddingDate}
           </p>
-          <div className="mt-4 w-16 h-px bg-gradient-romantic mx-auto"></div>
+          <div className="w-20 h-0.5 bg-gradient-gold mx-auto animate-shimmer"></div>
         </div>
         
-        <div className="mt-12 animate-float">
-          <div className="inline-block p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="animate-float magnetic cursor-pointer" style={{ animationDelay: '0.6s' }}>
+          <div className="inline-block p-4 rounded-full glass-card hover:shadow-glow transition-all duration-500 hover:scale-110 group">
+            <svg className="w-6 h-6 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>
