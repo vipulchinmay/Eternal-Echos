@@ -70,9 +70,11 @@ export default {
 				}
 			},
 			backgroundImage: {
-				'gradient-romantic': 'var(--gradient-romantic)',
-				'gradient-soft': 'var(--gradient-soft)',
-				'gradient-accent': 'var(--gradient-accent)',
+          'gradient-romantic': 'var(--gradient-romantic)',
+          'gradient-soft': 'var(--gradient-soft)',
+          'gradient-accent': 'var(--gradient-accent)',
+          'gradient-golden': 'var(--gradient-gold)',
+          'gradient-sunset': 'linear-gradient(135deg, hsl(15 85% 68%) 0%, hsl(345 70% 62%) 50%, hsl(12 65% 62%) 100%)',
 				'gradient-gold': 'var(--gradient-gold)',
 				'gradient-pearl': 'var(--gradient-pearl)',
 				'gradient-hero': 'var(--gradient-hero)',
