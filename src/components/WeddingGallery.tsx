@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
 import { Heart, Calendar, Users, Camera } from 'lucide-react';
 
 const WeddingGallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [api, setApi] = useState<CarouselApi>();
 
   const weddingEvents = [
     {
@@ -65,6 +66,42 @@ const WeddingGallery = () => {
     }
   ];
 
+  useEffect(() => {
+    if (!api) return;
+
+    const intervalId = setInterval(() => {
+      if (api.canScrollNext()) {
+        api.scrollNext();
+      } else {
+        api.scrollTo(0);
+      }
+    }, 1000);
+
+    // Clear interval on user interaction
+    const handlePointerDown = () => {
+      clearInterval(intervalId);
+      setTimeout(() => {
+        // Restart autoplay after 3 seconds of inactivity
+        const newIntervalId = setInterval(() => {
+          if (api.canScrollNext()) {
+            api.scrollNext();
+          } else {
+            api.scrollTo(0);
+          }
+        }, 1000);
+        
+        return () => clearInterval(newIntervalId);
+      }, 3000);
+    };
+
+    api.on('pointerDown', handlePointerDown);
+
+    return () => {
+      clearInterval(intervalId);
+      api.off('pointerDown', handlePointerDown);
+    };
+  }, [api]);
+
   return (
     <section className="py-20 px-6 bg-gradient-to-br from-background via-accent/5 to-secondary/10 relative overflow-hidden">
       {/* Decorative background elements */}
@@ -92,6 +129,7 @@ const WeddingGallery = () => {
         {/* Main Carousel */}
         <div className="mb-16">
           <Carousel 
+            setApi={setApi}
             className="w-full"
             opts={{
               align: "start",
