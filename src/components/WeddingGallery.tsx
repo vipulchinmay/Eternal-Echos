@@ -75,7 +75,7 @@ const WeddingGallery = () => {
       } else {
         api.scrollTo(0);
       }
-    }, 1000);
+    }, 2000);
 
     // Clear interval on user interaction
     const handlePointerDown = () => {
@@ -88,10 +88,10 @@ const WeddingGallery = () => {
           } else {
             api.scrollTo(0);
           }
-        }, 1000);
+        }, 2000);
         
         return () => clearInterval(newIntervalId);
-      }, 3000);
+      }, 5000);
     };
 
     api.on('pointerDown', handlePointerDown);
@@ -141,7 +141,7 @@ const WeddingGallery = () => {
                 <CarouselItem key={event.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <Card 
                     className="group cursor-pointer hover-reveal bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 transition-all duration-700 hover:shadow-elegant"
-                    onClick={() => setSelectedImage(event.image)}
+                    
                   >
                     <CardContent className="p-0">
                       <div className="relative overflow-hidden rounded-t-lg">
