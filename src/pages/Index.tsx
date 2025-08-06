@@ -4,6 +4,7 @@ import CountdownTimer from '@/components/CountdownTimer';
 import EventDetails from '@/components/EventDetails';
 import WeddingGallery from '@/components/WeddingGallery';
 import PhotoManager from '@/components/PhotoManager';
+import MessagesDisplay from '@/components/MessagesDisplay';
 import RSVPForm from '@/components/RSVPForm';
 import VenueLocation from '@/components/VenueLocation';
 
@@ -26,6 +27,9 @@ const Index = () => {
       
       {/* Photo Manager Section */}
       <PhotoManager />
+      
+      {/* Messages Display Section */}
+      <MessagesDisplay />
       
       {/* Venue Location Section */}
       <VenueLocation />
