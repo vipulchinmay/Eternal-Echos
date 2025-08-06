@@ -215,7 +215,7 @@
 
   /* Hover reveal effects */
   .hover-reveal {
-    @apply relative overflow-hidden group;
+    @apply relative overflow-hidden;
   }
 
   .hover-reveal::after {
